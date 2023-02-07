@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Signup from './pages/Signup';
 import Signin from './pages/Signin';
-import Todos from './pages/Todos';
+import Todo from './pages/Todo';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/todos" element={<Todos />} />
+        <Route path="/todos" element={<Todo />} />
       </Routes>
     </div>
   );
