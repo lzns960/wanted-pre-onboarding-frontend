@@ -4,6 +4,7 @@ import { BsFillTrashFill } from 'react-icons/bs';
 import { FaRegSave } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 import { Button, Input, Checkbox } from '@mui/material';
+import styled from 'styled-components';
 
 export default function TodoItem({ todo, id, editTodo, deleteTodo }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -21,18 +22,21 @@ export default function TodoItem({ todo, id, editTodo, deleteTodo }) {
         <form onSubmit={handleUpdateTodo}>
           <Input
             type="text"
+            data-testid="modify-input"
             value={newTodo}
             onChange={(event) => setNewTodo(event.target.value)}
           />
-          <Button>
+          <Button
+            data-testid="cancel-button"
+            onClick={() => setIsEditing(false)}>
             <IoClose />
           </Button>
-          <Button type="submit" variant="contained">
+          <Button type="submit" data-testid="submit-button" variant="contained">
             <FaRegSave />
           </Button>
         </form>
       ) : (
-        <>
+        <Todo>
           <Checkbox
             type="checkbox"
             checked={todo.isCompleted}
@@ -40,10 +44,12 @@ export default function TodoItem({ todo, id, editTodo, deleteTodo }) {
               editTodo(todo.id, todo.todo, event.target.checked);
             }}
           />
+
           <span
             style={{
               textDecoration: todo.isCompleted ? 'line-through' : ' ',
-            }}>
+            }}
+            className="todoText">
             {todo.todo}
           </span>
 
@@ -57,8 +63,16 @@ export default function TodoItem({ todo, id, editTodo, deleteTodo }) {
             data-testid="delete-button">
             <BsFillTrashFill />
           </Button>
-        </>
+        </Todo>
       )}
     </li>
   );
 }
+
+const Todo = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr;
+  & .todoText {
+    line-height: 2rem;
+  }
+`;
