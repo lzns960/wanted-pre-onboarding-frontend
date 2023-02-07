@@ -23,7 +23,6 @@ export default function Todo() {
 
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
-  const [newIsCompleted, setNewIsCompleted] = useState(false);
 
   const changeNewTodo = (event) => {
     setNewTodo(event.target.value);
@@ -31,7 +30,9 @@ export default function Todo() {
 
   const getTodos = async () => {
     const response = await todo.getTodos();
-    setTodos(response);
+    if (response !== undefined) {
+      setTodos(response);
+    }
   };
   const handleCreateTodo = async (event) => {
     event.preventDefault();
@@ -39,6 +40,7 @@ export default function Todo() {
     if (response != undefined) {
       setTodos([...todos, { todo: newTodo }]);
       setNewTodo('');
+      window.location.reload();
     }
   };
 
@@ -48,17 +50,23 @@ export default function Todo() {
       todo: _todo,
       isCompleted: _isCompleted,
     });
-
-    setTodos(
-      todos.map((todo) =>
-        todo.id === response?.id
-          ? { ...todo, todo: response.todo, isCompleted: response.isCompleted }
-          : todo,
-      ),
-    );
+    if (response != undefined) {
+      setTodos(
+        todos.map((todo) =>
+          todo.id === response?.id
+            ? {
+                ...todo,
+                todo: response.todo,
+                isCompleted: response.isCompleted,
+              }
+            : todo,
+        ),
+      );
+    }
   };
 
   const deleteTodo = async (_id) => {
+    await todo.deleteTodo({ id: _id });
     setTodos(todos.filter((todo) => todo.id !== _id));
   };
   useEffect(() => {
@@ -94,7 +102,7 @@ export default function Todo() {
               data-testid="new-todo-add-button"
               type="submit"
               variant="contained"
-              className="button">
+              className="button addBtn">
               Add
             </Button>
           </form>
@@ -115,5 +123,13 @@ const MainWrapper = styled.div`
   & img {
     max-width: 100%;
     max-height: 30vw;
+  }
+
+  & #outlined-textarea {
+    width: 250px;
+  }
+
+  & .addBtn {
+    padding: 15px 20px;
   }
 `;
