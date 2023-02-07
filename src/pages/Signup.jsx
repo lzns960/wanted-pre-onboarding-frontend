@@ -11,6 +11,9 @@ export default function Signup() {
   const linkSignin = () => {
     navigate('/');
   };
+  const linkTodos = () => {
+    navigate('/todos');
+  };
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -54,6 +57,13 @@ export default function Signup() {
       }
     }
   };
+
+  useEffect(() => {
+    const userToken = localStorage.getItem('user');
+    if (userToken) {
+      linkTodos();
+    }
+  }, []);
 
   return (
     <Main>

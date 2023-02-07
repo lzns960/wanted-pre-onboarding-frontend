@@ -57,6 +57,13 @@ export default function SignIn() {
     }
   };
 
+  useEffect(() => {
+    const userToken = localStorage.getItem('user');
+    if (userToken) {
+      linkTodos();
+    }
+  }, []);
+
   return (
     <Main>
       <form onSubmit={handleSubmit}>
