@@ -1,57 +1,33 @@
 # 원티드 프리온보딩 프론트엔드 - 선발 과제
 
-이 레파지토리는 원티드 프리온보딩 프론트엔드 과정 선발 과제 안내 및 과제 간 사용하기 위한 API를 제공하기 위해 만들어졌습니다.
+## 프로젝트의 실행 방법
+```js
+// 프로젝트 패키지 설치
+npm install
 
-## 안내 사항
+// 프로젝트 실행
+npm start
+```
 
-- 본 과제는 프리온보딩 프론트엔드 코스 선발 과정에서 최소한의 수준을 파악하기 위한 용도입니다.
-- 기능의 정상 동작 여부, 작성된 코드의 퀄리티, Git 관리 수준 등을 기준으로 평가가 이루어집니다.
-- 이 레파지토리에서 제공된 API를 활용해서 선발 과제를 진행하게 됩니다.
-- API의 실행 및 사용법은 [API](#api) 챕터를 참고해주세요
-- 과제의 소스코드는 본인의 GitHub 레파지토리에 **Public**으로 올려주세요
-- 레파지토리 이름은 `wanted-pre-onboarding-frontend`로 생성해주세요
-- 과제 제출은 참가 신청시 수행한 과제의 레파지토리의 주소를 제출해주세요
+## 데모 영상
 
-### 주의 사항
 
-- **제출한 링크가 잘못되었거나, 링크를 통해서 레파지토리에 접근할 수 없는 경우 탈락처리됩니다.**
+ <details>
+ <summary><h3> 🙌 여기를 눌러주세요! (데모 영상)</h3> </summary>
+<div markdown="1" align="center">       
 
-- 레파지토리를 들어갔을 때 바로 소스코드가 보이도록 해주세요, 불필요한 depth가 존재하면 안됩니다.
+https://user-images.githubusercontent.com/78632299/217323671-6b339323-e64e-46f4-b6ec-540f54769cf3.mp4
 
-  - [올바른 예시](https://github.com/walking-sunset/right-example)
-  - [불필요한 depth가 존재하는 예시](https://github.com/walking-sunset/wrong-example)
+</div>
+</details>
+<br/>
 
-- 레파지토리 안의 특정 폴더의 링크가 아닌 레파지토리의 링크를 제출해주세요
+|Sign up|Sign in | Todo |
+| :---: |  :---: | :---: |
+|![사전과제-회원가입](https://user-images.githubusercontent.com/78632299/217315026-52338f29-c7cd-4a3c-a9f1-f77f52e1c0a6.gif)|![사전과제-로그인](https://user-images.githubusercontent.com/78632299/217315182-316c13c6-05aa-44c4-8d5e-cdb929be630a.gif)|![사전과제-todolist](https://user-images.githubusercontent.com/78632299/217315224-d9b8a9d4-a7cf-4f46-bf92-b7963d0c5945.gif)|
 
-  - 올바른 예시: [https://github.com/walking-sunset/right-example](https://github.com/walking-sunset/right-example)
-  - 특정 폴더의 링크를 제출한 예시: [https://github.com/walking-sunset/right-example/tree/master/src](https://github.com/walking-sunset/right-example/tree/master/src)
-
-- 제출시기 가산점은 모집 페이지에서 제출한 시기와, 레파지토리의 default branch의 최종 커밋 시기를 기반으로 결정됩니다.
-  - 과제 제출 후에는 코드 변경을 지양해주시고, 평가와 무관하게 수정을 하고 싶을 경우 default branch(master or main)가 아닌 별도의 브랜치에서 작업해주세요
-
-## 진행 가이드
-
-- **진행 간 문의사항은 이 레파지토리의 Issue로 등록해주세요**
-
-- Create React App을 이용해 과제를 구현해주세요
-- 함수 컴포넌트를 이용해서 진행해주세요
-- UI는 지원자 개인이 생각했을 때 자연스러운 형태로 구현해주세요, UI는 평가에 영향을 미치지 않습니다.
-- README.md 작성은 필수입니다. 아래의 사항은 반드시 포함되도록 해주세요
-  - 프로젝트의 실행 방법
-  - 데모 영상
-  - 데모 영상은 배포 링크로 대체 가능하며, 배포가 되었고 배포된 사이트에서 기능이 모두 동작하면 가산점이 부여됩니다.
-- 기능구현에 직접적으로 연관된 라이브러리 사용은 허용되지 않습니다.(React-Query 등)
-- 사용가능한 라이브러리 목록은 아래와 같습니다.
-  - React Router
-  - HTTP Client 라이브러리(Axios 등)
-  - 스타일링 관련 라이브러리(Sass, Styled Components, Emotion 등)
-  - 아이콘 등 UI 관련 라이브러리(Font-Awesome, React-Icons, Bootstrap 등)
-  - 기능과 직접적인 연관이 없는 설정관련 라이브러리(craco, dotenv 등)
 
 ## 과제
-
-- 과제 수행 과정에서 지원자분들의 자율성과 창의력을 발휘하는 것을 기대하고 존중합니다. 다만, 아래 과제 안내에 적힌 가이드라인들은 모두 정확히 준수해주시기를 바랍니다.
-- 가이드라인에 명시된 사항 외에는 자유롭게 진행해주셔도 됩니다.
 
 ### :: 1. 로그인 / 회원가입
 
