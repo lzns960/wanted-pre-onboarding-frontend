@@ -9,6 +9,9 @@ npm install
 npm start
 ```
 
+## 배포 주소
+https://beamish-meerkat-92914b.netlify.app/
+
 ## 데모 영상
 
 
